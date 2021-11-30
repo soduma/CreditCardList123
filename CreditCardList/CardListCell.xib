@@ -29,17 +29,17 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="e2S-0Y-04C">
                                 <rect key="frame" x="80" y="0.0" width="210" height="44"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="02g-Y8-Bos">
-                                        <rect key="frame" x="0.0" y="0.0" width="110.33333333333333" height="22"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="02g-Y8-Bos">
+                                        <rect key="frame" x="0.0" y="0.0" width="119.66666666666667" height="22"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0위" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X1W-oR-CIH">
-                                                <rect key="frame" x="0.0" y="1" width="30.333333333333332" height="20.333333333333332"/>
+                                                <rect key="frame" x="0.0" y="1" width="29.666666666666668" height="20.333333333333332"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0만원 증정" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4iJ-PW-mes">
-                                                <rect key="frame" x="30.333333333333329" y="1" width="80" height="20"/>
+                                                <rect key="frame" x="39.666666666666671" y="1" width="80" height="20"/>
                                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="20" id="ZeO-X6-OlK"/>
@@ -83,7 +83,7 @@
                 <outlet property="promotionLabel" destination="4iJ-PW-mes" id="Bc4-Qa-QoV"/>
                 <outlet property="rankLabel" destination="X1W-oR-CIH" id="koL-uz-Xze"/>
             </connections>
-            <point key="canvasLocation" x="132" y="107"/>
+            <point key="canvasLocation" x="130" y="106.63507109004739"/>
         </tableViewCell>
     </objects>
     <resources>

@@ -13,6 +13,7 @@
 		A04D21652754B78800347C4D /* CardListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A04D21632754B78800347C4D /* CardListCell.xib */; };
 		A04D21672754C2DB00347C4D /* CardDeatilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04D21662754C2DB00347C4D /* CardDeatilViewController.swift */; };
 		A04D21692754C53B00347C4D /* money.json in Resources */ = {isa = PBXBuildFile; fileRef = A04D21682754C53B00347C4D /* money.json */; };
+		A04D216B2755D46200347C4D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A04D216A2755D46200347C4D /* GoogleService-Info.plist */; };
 		A0B3A59E2754B4670071D55D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B3A59D2754B4670071D55D /* AppDelegate.swift */; };
 		A0B3A5A02754B4670071D55D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B3A59F2754B4670071D55D /* SceneDelegate.swift */; };
 		A0B3A5A22754B4670071D55D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B3A5A12754B4670071D55D /* ViewController.swift */; };
@@ -30,6 +31,7 @@
 		A04D21632754B78800347C4D /* CardListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardListCell.xib; sourceTree = "<group>"; };
 		A04D21662754C2DB00347C4D /* CardDeatilViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDeatilViewController.swift; sourceTree = "<group>"; };
 		A04D21682754C53B00347C4D /* money.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = money.json; sourceTree = "<group>"; };
+		A04D216A2755D46200347C4D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A0B3A59A2754B4670071D55D /* CreditCardList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CreditCardList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0B3A59D2754B4670071D55D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A0B3A59F2754B4670071D55D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 				A04D21682754C53B00347C4D /* money.json */,
 				A0B3A5A82754B4690071D55D /* LaunchScreen.storyboard */,
 				A0B3A5AB2754B4690071D55D /* Info.plist */,
+				A04D216A2755D46200347C4D /* GoogleService-Info.plist */,
 			);
 			path = CreditCardList;
 			sourceTree = "<group>";
@@ -171,6 +174,7 @@
 				A04D21692754C53B00347C4D /* money.json in Resources */,
 				A0B3A5A52754B4670071D55D /* Main.storyboard in Resources */,
 				A04D21652754B78800347C4D /* CardListCell.xib in Resources */,
+				A04D216B2755D46200347C4D /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
