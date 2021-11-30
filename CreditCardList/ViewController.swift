@@ -12,7 +12,7 @@ import Firebase
 class ViewController: UITableViewController {
 
     var creditCardList: [CreditCard] = []
-    var ref: DatabaseReference!
+//    var ref: DatabaseReference!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,24 +20,24 @@ class ViewController: UITableViewController {
         let nibName = UINib(nibName: "CardListCell", bundle: nil)
         tableView.register(nibName, forCellReuseIdentifier: "CardListCell")
         
-        ref = Database.database().reference()
-        ref.observe(.value) { snapshot in
-            guard let value = snapshot.value as? [String: [String: Any]] else { return }
-            
-            do {
-                let jsonData = try JSONSerialization.data(withJSONObject: value)
-                let cardData = try JSONDecoder().decode([String: CreditCard].self, from: jsonData)
-                let cardList = Array(cardData.values)
-                self.creditCardList = cardList.sorted { $0.rank < $1.rank }
-                
-                DispatchQueue.main.async {
-                    self.tableView.reloadData()
-                }
-                
-            } catch let error {
-                print("error: \(error.localizedDescription)")
-            }
-        }
+//        ref = Database.database().reference()
+//        ref.observe(.value) { snapshot in
+//            guard let value = snapshot.value as? [String: [String: Any]] else { return }
+//
+//            do {
+//                let jsonData = try JSONSerialization.data(withJSONObject: value)
+//                let cardData = try JSONDecoder().decode([String: CreditCard].self, from: jsonData)
+//                let cardList = Array(cardData.values)
+//                self.creditCardList = cardList.sorted { $0.rank < $1.rank }
+//
+//                DispatchQueue.main.async {
+//                    self.tableView.reloadData()
+//                }
+//
+//            } catch let error {
+//                print("error: \(error.localizedDescription)")
+//            }
+//        }
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -65,9 +65,9 @@ class ViewController: UITableViewController {
         show(CardDetailViewController, sender: nil)
         
         //isSelected
-        let cardID = creditCardList[indexPath.row].id
+//        let cardID = creditCardList[indexPath.row].id
         //option1
-        ref.child("Item\(cardID)/isSelected").setValue(true)
+//        ref.child("Item\(cardID)/isSelected").setValue(true)
         
         //option2
 //        ref.queryOrdered(byChild: "id").queryEqual(toValue: cardID).observe(.value) { [weak self] snapshot in
@@ -87,8 +87,8 @@ class ViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             //option1
-            let cardID = creditCardList[indexPath.row].id
-            ref.child("Item\(cardID)").removeValue()
+//            let cardID = creditCardList[indexPath.row].id
+//            ref.child("Item\(cardID)").removeValue()
             
             //option2
 //            ref.queryOrdered(byChild: "id").queryEqual(toValue: cardID).observe(.value) { [weak self] snapshot in

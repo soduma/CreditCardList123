@@ -14,6 +14,7 @@
 		A04D21672754C2DB00347C4D /* CardDeatilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04D21662754C2DB00347C4D /* CardDeatilViewController.swift */; };
 		A04D21692754C53B00347C4D /* money.json in Resources */ = {isa = PBXBuildFile; fileRef = A04D21682754C53B00347C4D /* money.json */; };
 		A04D216B2755D46200347C4D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A04D216A2755D46200347C4D /* GoogleService-Info.plist */; };
+		A04D216D2755F2AB00347C4D /* CreditCardDummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04D216C2755F2AB00347C4D /* CreditCardDummy.swift */; };
 		A0B3A59E2754B4670071D55D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B3A59D2754B4670071D55D /* AppDelegate.swift */; };
 		A0B3A5A02754B4670071D55D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B3A59F2754B4670071D55D /* SceneDelegate.swift */; };
 		A0B3A5A22754B4670071D55D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B3A5A12754B4670071D55D /* ViewController.swift */; };
@@ -32,6 +33,7 @@
 		A04D21662754C2DB00347C4D /* CardDeatilViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDeatilViewController.swift; sourceTree = "<group>"; };
 		A04D21682754C53B00347C4D /* money.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = money.json; sourceTree = "<group>"; };
 		A04D216A2755D46200347C4D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		A04D216C2755F2AB00347C4D /* CreditCardDummy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreditCardDummy.swift; sourceTree = "<group>"; };
 		A0B3A59A2754B4670071D55D /* CreditCardList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CreditCardList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0B3A59D2754B4670071D55D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A0B3A59F2754B4670071D55D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -100,8 +102,9 @@
 				A04D21622754B78800347C4D /* CardListCell.swift */,
 				A04D21632754B78800347C4D /* CardListCell.xib */,
 				A04D21662754C2DB00347C4D /* CardDeatilViewController.swift */,
-				A0B3A5A62754B4690071D55D /* Assets.xcassets */,
 				A04D21682754C53B00347C4D /* money.json */,
+				A04D216C2755F2AB00347C4D /* CreditCardDummy.swift */,
+				A0B3A5A62754B4690071D55D /* Assets.xcassets */,
 				A0B3A5A82754B4690071D55D /* LaunchScreen.storyboard */,
 				A0B3A5AB2754B4690071D55D /* Info.plist */,
 				A04D216A2755D46200347C4D /* GoogleService-Info.plist */,
@@ -120,7 +123,7 @@
 				A0B3A5962754B4670071D55D /* Sources */,
 				A0B3A5972754B4670071D55D /* Frameworks */,
 				A0B3A5982754B4670071D55D /* Resources */,
-				FD320120F52CAD0B5AC642D5 /* [CP] Embed Pods Frameworks */,
+				ECF9BFB98E614CB84564302A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -203,7 +206,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		FD320120F52CAD0B5AC642D5 /* [CP] Embed Pods Frameworks */ = {
+		ECF9BFB98E614CB84564302A /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -231,6 +234,7 @@
 				A04D21642754B78800347C4D /* CardListCell.swift in Sources */,
 				A0B3A5A22754B4670071D55D /* ViewController.swift in Sources */,
 				A04D21672754C2DB00347C4D /* CardDeatilViewController.swift in Sources */,
+				A04D216D2755F2AB00347C4D /* CreditCardDummy.swift in Sources */,
 				A0B3A59E2754B4670071D55D /* AppDelegate.swift in Sources */,
 				A0B3A5A02754B4670071D55D /* SceneDelegate.swift in Sources */,
 			);
