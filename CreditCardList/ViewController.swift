@@ -8,11 +8,13 @@
 import UIKit
 import Kingfisher
 import Firebase
+import FirebaseFirestore
 
 class ViewController: UITableViewController {
 
     var creditCardList: [CreditCard] = []
 //    var ref: DatabaseReference!
+    var db = Firestore.firestore()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +22,7 @@ class ViewController: UITableViewController {
         let nibName = UINib(nibName: "CardListCell", bundle: nil)
         tableView.register(nibName, forCellReuseIdentifier: "CardListCell")
         
+        //realtime
 //        ref = Database.database().reference()
 //        ref.observe(.value) { snapshot in
 //            guard let value = snapshot.value as? [String: [String: Any]] else { return }
@@ -38,6 +41,30 @@ class ViewController: UITableViewController {
 //                print("error: \(error.localizedDescription)")
 //            }
 //        }
+        
+        //firestore
+        db.collection("creditCardList").addSnapshotListener { snapshot, error in
+            guard let document = snapshot?.documents else {
+                print("error firestore fetch document: \(String(describing: error))")
+                return
+            }
+            
+            self.creditCardList = document.compactMap { doc -> CreditCard? in
+                do {
+                    let jsonData = try JSONSerialization.data(withJSONObject: doc.data(), options: [])
+                    let creditCard = try JSONDecoder().decode(CreditCard.self, from: jsonData)
+                    return creditCard
+                    
+                } catch let error {
+                    print("error json parsing: \(error.localizedDescription)")
+                    return nil
+                }
+            }.sorted { $0.rank < $1.rank }
+            
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -64,12 +91,12 @@ class ViewController: UITableViewController {
         CardDetailViewController.promotionDetail = creditCardList[indexPath.row].promotionDetail
         show(CardDetailViewController, sender: nil)
         
-        //isSelected
+        //realtime 쓰기
 //        let cardID = creditCardList[indexPath.row].id
-        //option1
+        //option1 경로를 알 때
 //        ref.child("Item\(cardID)/isSelected").setValue(true)
         
-        //option2
+        //option2 경로를 모를 때
 //        ref.queryOrdered(byChild: "id").queryEqual(toValue: cardID).observe(.value) { [weak self] snapshot in
 //            guard let self = self,
 //                  let value = snapshot.value as? [String: [String: Any]],
@@ -78,6 +105,21 @@ class ViewController: UITableViewController {
 //            print(value.keys.first)
 //            self.ref.child("\(key)/isSelected").setValue(true)
 //        }
+        
+        //firestore 쓰기
+        //option1
+//        let cardID = creditCardList[indexPath.row].id
+//        db.collection("creditCardList").document("card\(cardID)").updateData(["isSelected": true])
+        
+        //option2
+        let cardID = creditCardList[indexPath.row].id
+        db.collection("creditCardList").whereField("id", isEqualTo: cardID).getDocuments { snapshot, _ in
+            guard let document = snapshot?.documents.first else {
+                print("error fetch firestore document")
+                return
+            }
+            document.reference.updateData(["isSelected": true])
+        }
     }
     
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -86,6 +128,7 @@ class ViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
+            //realtime 삭제
             //option1
 //            let cardID = creditCardList[indexPath.row].id
 //            ref.child("Item\(cardID)").removeValue()
@@ -98,6 +141,21 @@ class ViewController: UITableViewController {
 //
 //                self.ref.child(key).removeValue()
 //            }
+            
+            //firestore 삭제
+            //option1
+            let cardID = creditCardList[indexPath.row].id
+            db.collection("creditCardList").document("card\(cardID)").delete()
+            
+            //option2
+            db.collection("creditCardList").whereField("id", isEqualTo: cardID).getDocuments { snapshot, _ in
+                guard let document = snapshot?.documents.first else {
+                    print("error")
+                    return
+                }
+                
+                document.reference.delete()
+            }
         }
     }
 }
